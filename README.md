@@ -14,12 +14,8 @@ This is a solution to the [Multi-step form challenge on Frontend Mentor](https:/
 - [Overview](#overview)
   - [The challenge](#the-challenge)
   - [Screenshot](#screenshot)
-  - [Links](#links)
+  <!-- - [Links](#links) -->
 - [My process](#my-process)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
@@ -42,6 +38,20 @@ Users should be able to:
 
 Uso de variáveis com Style Components
 ![](./src/doc/variaveis-styledC.png)
+
+<!-- ```html
+<h1>Some HTML code I'm proud of</h1>
+``` -->
+
+```Styled
+color: ${(props) => (props.ativo ? ColorBlue4 : ColorBlue1)};
+```
+
+<!-- ```js
+const proudOfThisFunc = () => {
+  console.log("🎉");
+};
+``` -->
 
 Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
 
@@ -90,4 +100,5 @@ Use this section to outline areas that you want to continue focusing on in futur
 - Twitter - [@yourusername](https://www.twitter.com/yourusername)
 
 **Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
+
 # reactJS-Form-StyledComponents
