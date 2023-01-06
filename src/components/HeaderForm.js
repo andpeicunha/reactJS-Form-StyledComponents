@@ -29,7 +29,7 @@ export function HeaderForms({ txtHeaderForm }) {
   return (
     <TitleHeader Size="40px">
       {txtHeaderForm.title}
-      <TitleHeader fontFam="300" Size="20px" Color={ColorBlue2}>
+      <TitleHeader fontFam="300" Size="0.45em" Color="#979797">
         {txtHeaderForm.body}
       </TitleHeader>
     </TitleHeader>

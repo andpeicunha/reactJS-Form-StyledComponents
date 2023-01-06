@@ -1,6 +1,6 @@
 const theme = {
   ThemePrimary: {
-    ColorBlue1: "#EEF5FF",
+    ColorBlue1: "rgb(238, 245, 255)",
     ColorBlue2: "#625AFF",
     ColorBlue3: "#483EFF",
     ColorBlue4: "#052858",

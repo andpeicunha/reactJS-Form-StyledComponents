@@ -1,16 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import imgBgSideBar from "../images/bg-sidebar-desktop.svg";
-
-/* TRAZ AS DEFINIÇÕES DE THEME GLOBAL */
-const ColorBlue1 = (props) => props.theme.ThemePrimary.ColorBlue1;
-const ColorBlue2 = (props) => props.theme.ThemePrimary.ColorBlue2;
-const ColorBlue3 = (props) => props.theme.ThemePrimary.ColorBlue3;
-const ColorBlue4 = (props) => props.theme.ThemePrimary.ColorBlue4;
-const Roboto100 = (props) => props.theme.Fonts.Roboto100;
-const Roboto200 = (props) => props.theme.Fonts.Roboto200;
-const Roboto300 = (props) => props.theme.Fonts.Roboto300;
-const Roboto400 = (props) => props.theme.Fonts.Roboto400;
+import theme from "../theme";
 
 const ImgSideBar = styled.div`
   display: flex;
@@ -24,7 +15,7 @@ const ImgSideBar = styled.div`
   background-size: cover;
 
   height: 100% !important;
-  width: 35%;
+  width: 45%;
   border-radius: 15px;
 `;
 
@@ -45,11 +36,16 @@ const NumberList = styled.div`
   border-radius: 50px;
 
   background-color: ${(props) =>
-    props.ativo ? ColorBlue1 : ""}; /* Se a Props Ativo está TRUE muda a cor */
-  border: 1px solid ${ColorBlue1};
+    props.ativo
+      ? theme.ThemePrimary.ColorBlue1
+      : ""}; /* Se a Props Ativo está TRUE muda a cor */
+  border: 1px solid ${theme.ThemePrimary.ColorBlue1};
 
   /* Definições de texto */
-  color: ${(props) => (props.ativo ? ColorBlue4 : ColorBlue1)};
+  color: ${(props) =>
+    props.ativo
+      ? theme.ThemePrimary.ColorBlue4
+      : theme.ThemePrimary.ColorBlue1};
   font-weight: bold;
   font-size: 1.5vw;
 `;
@@ -63,15 +59,17 @@ const ListaTexto = styled.div`
 `;
 
 const TitleList = styled.div`
-  color: ${(props) => ColorBlue1};
-  font-family: ${(props) => Roboto100};
-  font-size: 1.3vw;
+  color: ${(props) => theme.ThemePrimary.ColorBlue1};
+  opacity: 0.6;
+  font-family: ${(props) => theme.Fonts.oboto100};
+  font-size: 0.9vw;
+  text-transform: uppercase;
 `;
 
 const BodyList = styled.div`
-  color: ${(props) => ColorBlue1};
-  font-family: ${(props) => Roboto300};
-  font-size: 1.5vw;
+  color: ${(props) => theme.ThemePrimary.ColorBlue1};
+  font-family: ${(props) => theme.Fonts.Roboto300};
+  font-size: 1.4vw;
 `;
 
 export function List({ itens1, itens2, itens3, itens4 }) {

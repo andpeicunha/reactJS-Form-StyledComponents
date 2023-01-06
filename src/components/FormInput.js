@@ -1,65 +1,46 @@
 import React, { Component } from "react";
 import styled from "styled-components";
+import theme from "../theme";
 
-const TitleHeader = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
+/* NOME DO CAMPO */
+const Label = styled.label`
+  color: ${theme.ThemePrimary.ColorBlue4};
+  font-size: 1.3em;
+  font-family: ${theme.Fonts.Roboto300};
+  margin: 18px 0 8px 0;
 `;
 
-const BtEnviar = styled.input`
-  background: ${(props) => (props.enviar ? "palevioletred" : "white")};
-  font-size: 1.5em;
-  margin: 1em;
-  padding: 0.25em 1em;
-  border: 2px solid ${(props) => (props.enviar ? "#bc2e5d" : "white")};
+/* INPUT */
+const CampoTxt = styled.input`
+  border: 1px solid #a9a9a9;
   border-radius: 5px;
+  height: 30px;
+  width: 100%;
+  color: #d4d4d4;
+  font-size: 1.2em;
+  padding: 5px 0 5px 5px;
+  margin: 5px 0;
+  font-family: ${theme.Fonts.Roboto200};
 `;
 
-class FormInput extends React.Component {
+class FormInput extends Component {
   constructor(props) {
     super(props);
     this.state = { value: "" };
-
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
-
-  handleChange(event) {
-    this.setState({ value: event.target.value });
-  }
-
-  handleSubmit(event) {
-    alert("A name was submitted: " + this.state.value);
-    event.preventDefault();
-  }
-
   render() {
     return (
-      <TitleHeader>
-        <form onSubmit={this.handleSubmit}>
-          <label>
-            Name:
-            <input
-              type="text"
-              value={this.state.value}
-              onChange={this.handleChange}
-            />
-          </label>
-          <BtEnviar type="submit" value={btSend.title} enviar />
-        </form>
-      </TitleHeader>
+      <Label>
+        {this.props.Input.TitleInput}
+        <CampoTxt
+          type="text"
+          value={this.state.value}
+          onChange={this.handleChange}
+          placeholder={this.props.Input.PlaceHolder}
+        />
+      </Label>
     );
   }
 }
 
 export default FormInput;
-
-// export function FormInput() {
-//   return (
-//     <TitleHeader>
-//       <ComentHeader>asas1</ComentHeader>
-//     </TitleHeader>
-//   );
-// }
